@@ -1,0 +1,16 @@
+<h3>Register</h3>
+<a href="#!/login">Login</a><br><br>
+
+<span ng-if="UC.errors.formError">{{ UC.errors.formError }}</span>
+<span ng-if="UC.errors.duplicate">{{ UC.errors.duplicate }}</span>
+<br>
+<form ng-submit="UC.register(user)">
+  Username: <input type="text" ng-model="user.username"><span ng-if="UC.errors.username">{{ UC.errors.username.message }}</span><br>
+  First Name: <input type="text" ng-model="user.firstName"><span ng-if="UC.errors.firstName">{{ UC.errors.firstName.message }}</span><br>
+  Last Name: <input type="text" ng-model="user.lastName"><span ng-if="UC.errors.lastName">{{ UC.errors.lastName.message }}</span><br>
+  Email: <input type="text" ng-model="user.email"><span ng-if="UC.errors.email">{{ UC.errors.email.message }}</span><br>
+  Password: <input type="password" ng-model="user.password"><span ng-if="UC.errors.passwordError">{{ UC.errors.passwordError }}</span>
+  <span ng-if="UC.errors.password">{{ UC.errors.password.message }}</span><br>
+  Password Confirmation: <input type="password" ng-model="user.passwordConfirm"><span ng-if="UC.errors.passwordError">{{ UC.errors.passwordError }}</span><br>
+  <input type="submit" value="Register">
+</form>

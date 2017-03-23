@@ -1,0 +1,23 @@
+<h3>Current Polls:</h3>
+<a href="#!/poll/new">Create a New Poll</a> |
+<a href="" ng-controller="UsersController as UC" ng-click="UC.logout()">Logout</a><br><br>
+
+<input type="text" ng-model="pollFilter" placeholder="Search...">
+<table ng-init="DC.getPolls()">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Survey Question</th>
+      <th>Date Posted</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="poll in DC.polls | filter:pollFilter">
+      <td>{{ poll.author }}</td>
+      <td><a href="#!/poll/{{poll._id}}">{{ poll.question }}</a></td>
+      <td>{{ poll.createdAt | date:'MMM dd yyyy'}}</td>
+      <td><a ng-if="poll.author==DC.loggedInUser" href="" ng-click="DC.destroyPoll(poll._id)">Delete</a></td>
+    </tr>
+  </tbody>
+</table>

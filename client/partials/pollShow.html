@@ -1,0 +1,37 @@
+<div ng-init="PC.show()">
+  <h3>{{ PC.poll.question }}</h3>
+  <p>Click the Vote button to choose one.</p>
+  <a href="#!/dashboard">Go to Polls</a><br><br><br>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>Current Count of Votes</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ PC.poll.optionOne }}</td>
+        <td>{{ PC.poll.optionOneCount }}</td>
+        <td><button ng-click="PC.vote('one')">Vote</button></td>
+      </tr>
+      <tr>
+        <td>{{ PC.poll.optionTwo }}</td>
+        <td>{{ PC.poll.optionTwoCount }}</td>
+        <td><button ng-click="PC.vote('two')">Vote</button></td>
+      </tr>
+      <tr>
+        <td>{{ PC.poll.optionThree }}</td>
+        <td>{{ PC.poll.optionThreeCount }}</td>
+        <td><button ng-click="PC.vote('three')">Vote</button></td>
+      </tr>
+      <tr>
+        <td>{{ PC.poll.optionFour }}</td>
+        <td>{{ PC.poll.optionFourCount }}</td>
+        <td><button ng-click="PC.vote('four')">Vote</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

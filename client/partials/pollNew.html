@@ -1,0 +1,16 @@
+<h3>Put the question and options here:</h3>
+<a href="#!/dashboard">Cancel</a><br><br>
+
+<form ng-submit="PC.create(newPost)">
+  Question: <input type="text" ng-model="newPost.question">
+  <span ng-if="PC.errors.question">{{ PC.errors.question.message }}</span><br><br>
+  Option 1: <input type="text" ng-model="newPost.optionOne">
+  <span ng-if="PC.errors.optionOne">{{ PC.errors.optionOne.message }}</span><br><br>
+  Option 2: <input type="text" ng-model="newPost.optionTwo">
+  <span ng-if="PC.errors.optionTwo">{{ PC.errors.optionTwo.message }}</span><br><br>
+  Option 3: <input type="text" ng-model="newPost.optionThree">
+  <span ng-if="PC.errors.optionThree">{{ PC.errors.optionThree.message }}</span><br><br>
+  Option 4: <input type="text" ng-model="newPost.optionFour">
+  <span ng-if="PC.errors.optionFour">{{ PC.errors.optionFour.message }}</span><br><br>
+  <input type="submit" value="Create Poll">
+</form>
